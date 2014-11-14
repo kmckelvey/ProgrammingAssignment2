@@ -1,8 +1,8 @@
-## This function accepts a inversible matrix x
-## and creates functions to retrieve that matrix
-## and the inverse of the matrix.  It also defines
-## a function that caches the inverse of the matrix.
-## The set function initializes a new inversible matrix
+## This function accepts an inversible matrix x
+## and creates functions to set and retrieve that matrix
+## and the inverse of the matrix. The inverse is either 
+## from a cached value or via the solve() function. 
+
 
 makeCacheMatrix <- function(x = matrix()) 
 {
@@ -28,7 +28,7 @@ makeCacheMatrix <- function(x = matrix())
 
 
 ## This function returns the inverse of a given
-## "cached matrx" x.
+## "cached matrix" x.
 ## if first checks to see if the inverse has been cached,
 ## and returns the cached value if it has.
 ## otherwise it calculates the inverse and caches
@@ -42,7 +42,6 @@ cacheSolve <- function(x)
     
     if (!is.null(inv))
     {
-        #message("getting cached data")
         return(inv)
     }
     
